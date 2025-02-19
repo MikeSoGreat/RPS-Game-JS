@@ -36,6 +36,10 @@ body {
   scale: 1.2;
 }
 
+.game-btn:focus {
+  outline-style: none;
+}
+
 .game-result {
   font-size: 1.7rem;
   font-weight: bold;
