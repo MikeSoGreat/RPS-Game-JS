@@ -10,6 +10,11 @@
   background-color: aliceblue;
 }
 
+.btns {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 body {
   height: 100vh;
   height: 100svh;
@@ -31,6 +36,7 @@ body {
 
 .game-icon {
   width: 50%;
+  max-width: 350px;
 }
 
 .btn:hover {
