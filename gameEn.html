@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="rock-paper-scissors.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <a href="index.html">
+      <button class="change-lang">Language</button>
+    </a>
+    <h1 class="game-name">Rock Paper Scissors Game</h1>
+    <button
+      class="game-btn"
+      onclick="
+      playGame('✊');
+    "
+    >
+      ✊
+    </button>
+    <button
+      class="game-btn"
+      onclick="
+      playGame('✋');
+    "
+    >
+      ✋
+    </button>
+    <button
+      class="game-btn"
+      onclick="
+      playGame('✌️');
+    "
+    >
+      ✌️
+    </button>
+    <p class="js-result game-result"></p>
+    <p class="js-what-happened what-happend"></p>
+    <p>
+      Wins: <span class="js-game-wins"></span>, Losses:
+      <span class="js-game-losses"></span>, Ties:
+      <span class="js-game-ties"></span>
+    </p>
+    <button
+      class="reset-btn"
+      onclick="
+      resetScore();
+    "
+    >
+      Reset Score
+    </button>
+
+    <button
+      class="auto-play-btn"
+      onclick="
+    autoPlay();
+    "
+    >
+      Auto Play
+    </button>
+
+    <h3 class="js-auto-play"></h3>
+
+    <script src="rps.js"></script>
+  </body>
+</html>

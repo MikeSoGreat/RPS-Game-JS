@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سنگ کاغذ قیچی</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styleFa.css" />
+    <link
+      rel="shortcut icon"
+      href="rock-paper-scissors.svg"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Vazirmatn:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="direction: rtl">
+    <a href="index.html">
+      <button class="change-lang">تغییر زبان</button>
+    </a>
+    <h1 class="game-name">بازی سنگ کاغذ قیچی</h1>
+    <button
+      class="game-btn"
+      onclick="
+      playGame('✊', 'fa');
+    "
+    >
+      ✊
+    </button>
+    <button
+      class="game-btn"
+      onclick="
+      playGame('✋', 'fa');
+    "
+    >
+      ✋
+    </button>
+    <button
+      class="game-btn"
+      onclick="
+      playGame('✌️', 'fa');
+    "
+    >
+      ✌️
+    </button>
+    <p class="js-result game-result"></p>
+    <p class="js-what-happened what-happend"></p>
+    <p>
+      برد ها: <span class="js-game-wins"></span>، باخت ها:
+      <span class="js-game-losses"></span>، مساوی ها:
+      <span class="js-game-ties"></span>
+    </p>
+    <button
+      class="reset-btn"
+      onclick="
+      resetScore();
+    "
+    >
+      ریست امتیاز
+    </button>
+
+    <button
+      class="auto-play-btn"
+      onclick="
+    autoPlay('fa');
+    "
+    >
+      بازی خودکار
+    </button>
+
+    <h3 class="js-auto-play"></h3>
+
+    <script src="rps.js"></script>
+  </body>
+</html>

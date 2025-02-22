@@ -1,0 +1,244 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #191919;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.game-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.change-lang {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(230, 230, 230, 0.753);
+  border: none;
+  border-radius: 100vmax;
+  cursor: pointer;
+  padding: .3em .5em;
+  transition: all .5s ease;
+}
+
+.change-lang:hover {
+  scale: 1.1;
+}
+
+.change-lang:active {
+  scale: 1.2;
+}
+
+.game-btn {
+  border: solid 2px white;
+  background-color: transparent;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  filter: saturate(2);
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  transition: all .5s ease;
+  margin-inline: 5px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline-style: none;
+  outline: none;
+}
+
+.game-btn:hover {
+  filter: drop-shadow(0 0 .2em rgba(255, 255, 255, .8));
+  scale: 1.1;
+  outline-style: none;
+  outline: none;
+}
+
+.game-btn:active {
+  scale: 1.2;
+  outline-style: none;
+  outline: none;
+}
+
+.game-btn:focus {
+  outline-style: none;
+  outline: none;
+}
+
+.game-result {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.what-happend {
+  padding-bottom: 2em;
+}
+
+.pc-move,
+.user-move {
+  font-size: 2.5rem;
+  filter: saturate(2);
+}
+
+.winner-user {
+  display: inline-block;
+  animation-name: winner-user;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes winner-user {
+  0% {}
+
+  25% {
+    transform: translateY(-25px);
+  }
+
+  50% {
+    transform: translateX(50px);
+  }
+
+  100% {}
+}
+
+.winner-pc {
+  display: inline-block;
+  animation-name: winner-pc;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes winner-pc {
+  0% {}
+
+  25% {
+    transform: translateY(-25px);
+  }
+
+  50% {
+    transform: translateX(-50px);
+  }
+
+  100% {}
+}
+
+.loser-user {
+  display: inline-block;
+  animation-name: loser-user;
+  animation-delay: .6s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loser-user {
+  0% {}
+
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+.loser-pc {
+  display: inline-block;
+  animation-name: loser-pc;
+  animation-delay: .6s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loser-pc {
+  0% {}
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.tie-user {
+  display: inline-block;
+  animation-name: tie-user;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tie-user {
+  0% {
+    transform: translateX(0)
+  }
+
+  25% {
+    transform: translateX(10px)
+  }
+
+  50% {
+    transform: translateX(-10px)
+  }
+
+  75% {
+    transform: translateX(10px)
+  }
+
+  100% {
+    transform: rotate(-80deg);
+  }
+}
+
+.tie-pc {
+  display: inline-block;
+  animation-name: tie-pc;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tie-pc {
+  0% {
+    transform: translateX(0)
+  }
+
+  25% {
+    transform: translateX(-10px)
+  }
+
+  50% {
+    transform: translateX(10px)
+  }
+
+  75% {
+    transform: translateX(-10px)
+  }
+
+  100% {
+    transform: rotate(80deg);
+  }
+}
+
+.reset-btn,
+.auto-play-btn {
+  padding: .5em 1em;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all .2s ease;
+  border-radius: 100vmax;
+  border: none;
+  margin-top: 1em;
+  margin-inline: .5em;
+}
+
+.reset-btn:hover {
+  box-shadow: 0 0 .5em rgba(255, 0, 0, .5);
+}
+
+.reset-btn:active {
+  scale: 1.1;
+}
+
+.auto-play-btn:hover {
+  box-shadow: 0 0 .5em rgba(0, 255, 0, .5);
+}
+
+.auto-play-btn:active {
+  scale: 1.1;
+}
