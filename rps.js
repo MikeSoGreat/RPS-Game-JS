@@ -17,6 +17,26 @@ if (document.title === "سنگ کاغذ قیچی") {
   lang = "fa";
 }
 
+document.querySelector(".js-rock-btn").addEventListener("click", () => {
+  playGame("✊");
+});
+
+document.querySelector(".js-paper-btn").addEventListener("click", () => {
+  playGame("✋");
+});
+
+document.querySelector(".js-scissors-btn").addEventListener("click", () => {
+  playGame("✌️");
+});
+
+document.querySelector(".js-reset-btn").addEventListener("click", () => {
+  resetScore();
+});
+
+document.querySelector(".js-autoPlay-btn").addEventListener("click", () => {
+  autoPlay();
+});
+
 scoreCounter(lang);
 
 function playGame(userMove) {
@@ -77,7 +97,7 @@ function playGame(userMove) {
   }
 }
 
-function scoreCounter(lang = "en") {
+function scoreCounter() {
   winsElm = document.querySelector(".js-game-wins") || 0;
   tiesElm = document.querySelector(".js-game-ties") || 0;
   lossesElm = document.querySelector(".js-game-losses") || 0;
@@ -94,18 +114,41 @@ function scoreCounter(lang = "en") {
 }
 
 function resetScore() {
-  score = {
-    wins: 0,
-    losses: 0,
-    ties: 0,
-  };
+  let resetConfElm = document.querySelector(".js-reset-conf");
+  if (lang === "fa") {
+    resetConfElm.innerHTML = `مطمعنی که میخوای امتیاز هارو ریست کنی؟
+    <button class="js-reset-btn-yes reset-btn-yes">بله</button>
+    <button class="js-reset-btn-no reset-btn-no">نه</button>`;
+  } else {
+    resetConfElm.innerHTML = `Are you sure you want to reset the score?
+        <button class="js-reset-btn-yes reset-btn-yes">Yes</button>
+        <button class="js-reset-btn-no reset-btn-no">No</button>`;
+  }
+  document.querySelector(".js-reset-btn-yes").addEventListener("click", () => {
+    score = {
+      wins: 0,
+      losses: 0,
+      ties: 0,
+    };
 
-  scoreCounter('fa');
+    scoreCounter(lang);
 
-  localStorage.removeItem("score");
+    localStorage.removeItem("score");
+
+    lang === "fa"
+      ? (resetConfElm.innerHTML = "امتیاز ها ریست شدند")
+      : (resetConfElm.innerHTML = "Scores reseted");
+
+    setTimeout(() => {
+      resetConfElm.innerHTML = "";
+    }, 3000);
+  });
+  document.querySelector(".js-reset-btn-no").addEventListener("click", () => {
+    resetConfElm.innerHTML = "";
+  });
 }
 
-function autoPlay(lang = "en") {
+function autoPlay() {
   if (!isAutoPlaying) {
     intervalId = setInterval(function () {
       let userMove = Math.random();
@@ -124,19 +167,34 @@ function autoPlay(lang = "en") {
     isAutoPlaying = false;
   }
 
-  autoPlayMsg(lang);
+  autoPlayMsg();
 }
 
-function autoPlayMsg(lang = 'en') {
+function autoPlayMsg() {
   let msgElm = document.querySelector(".js-auto-play");
+  let autoPlayBtnElm = document.querySelector(".js-autoPlay-btn");
   if (isAutoPlaying) {
-    lang === "fa"
-      ? (msgElm.innerHTML = "بازی خودکار روشن است")
-      : (msgElm.innerHTML = "Auto Play is On");
+    if (lang === "fa") {
+      msgElm.innerHTML = "بازی خودکار روشن است";
+      autoPlayBtnElm.innerHTML = "ایست بازی خودکار";
+    } else {
+      msgElm.innerHTML = "Auto Play is On";
+      autoPlayBtnElm.innerHTML = "Stop Auto Play";
+    }
   } else if (!isAutoPlaying) {
-    lang === "fa"
-      ? (msgElm.innerHTML = "بازی خودکار خاموش است")
-      : (msgElm.innerHTML = "Auto Play is Off");
+    if (lang === "fa") {
+      msgElm.innerHTML = "بازی خودکار خاموش است";
+      setTimeout(() => {
+        msgElm.innerHTML = "";
+      }, 3000);
+      autoPlayBtnElm.innerHTML = "بازی خودکار";
+    } else {
+      msgElm.innerHTML = "Auto Play is Off";
+      setTimeout(() => {
+        msgElm.innerHTML = "";
+      }, 3000);
+      autoPlayBtnElm.innerHTML = "Auto Play";
+    }
   }
 }
 
