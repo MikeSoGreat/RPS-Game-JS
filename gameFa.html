@@ -23,30 +23,9 @@
       <button class="change-lang">تغییر زبان</button>
     </a>
     <h1 class="game-name">بازی سنگ کاغذ قیچی</h1>
-    <button
-      class="game-btn"
-      onclick="
-      playGame('✊', 'fa');
-    "
-    >
-      ✊
-    </button>
-    <button
-      class="game-btn"
-      onclick="
-      playGame('✋', 'fa');
-    "
-    >
-      ✋
-    </button>
-    <button
-      class="game-btn"
-      onclick="
-      playGame('✌️', 'fa');
-    "
-    >
-      ✌️
-    </button>
+    <button class="js-rock-btn game-btn">✊</button>
+    <button class="js-paper-btn game-btn">✋</button>
+    <button class="js-scissors-btn game-btn">✌️</button>
     <p class="js-result game-result"></p>
     <p class="js-what-happened what-happend"></p>
     <p>
@@ -54,25 +33,12 @@
       <span class="js-game-losses"></span>، مساوی ها:
       <span class="js-game-ties"></span>
     </p>
-    <button
-      class="reset-btn"
-      onclick="
-      resetScore();
-    "
-    >
-      ریست امتیاز
-    </button>
+    <button class="js-reset-btn reset-btn">ریست امتیاز</button>
 
-    <button
-      class="auto-play-btn"
-      onclick="
-    autoPlay('fa');
-    "
-    >
-      بازی خودکار
-    </button>
+    <button class="js-autoPlay-btn auto-play-btn">بازی خودکار</button>
 
     <h3 class="js-auto-play"></h3>
+    <div class="js-reset-conf reset-conf"></div>
 
     <script src="rps.js"></script>
   </body>
