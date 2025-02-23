@@ -281,5 +281,6 @@ button {
 @media all and (max-width: 400px) {
   .reset-conf {
     display: flex;
+    justify-content: center;
   }
 }
